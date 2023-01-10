@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Game } from 'src/models/game';
-
+import {MatDialog} from '@angular/material/dialog';
+import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -12,7 +13,7 @@ export class GameComponent {
   currentCard: string | undefined = '';
   game!: Game;
 
-  constructor() { }
+  constructor(public dialog: MatDialog,) { }
 
   ngOnInit(){
     this.newGame();
@@ -38,5 +39,14 @@ export class GameComponent {
         this.pickCardAnimation = false;
       }, 1500);
     }
+  }
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogAddPlayerComponent);
+
+    dialogRef.afterClosed().subscribe(name => {
+      this.game.players.push(name);
+    });
   }
 }

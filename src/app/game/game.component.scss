@@ -60,3 +60,14 @@
         transform: scale(1.1) translateX(160px) translateY(-260px) rotate(20deg);
     }
 }
+
+.player-position{
+    position: absolute;
+    right: 0;
+}
+
+.btn-add{
+    position: absolute;
+    right: 30px;   
+    bottom: 30px;
+}
