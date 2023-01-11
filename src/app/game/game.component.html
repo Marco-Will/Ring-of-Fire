@@ -42,6 +42,9 @@ class="player-position">
     </div>
 </div>
 
-<button (click)="openDialog()" class="btn-add" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+<button *ngIf="showInfo"  (click)="openDialog()" class="btn-add" mat-fab color="primary" aria-label="Example icon button with a delete icon">
     <mat-icon>add</mat-icon>
 </button>
+
+<app-game-info *ngIf="currentCard" [card]="currentCard" class="pin-bottom"></app-game-info>
+<app-game-info  *ngIf="showInfo" class="pin-bottom"></app-game-info>
