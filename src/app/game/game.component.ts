@@ -13,6 +13,7 @@ export class GameComponent {
   currentCard: string | undefined = '';
   game!: Game;
   showInfo: boolean = true;
+  showCardStack: boolean = false;
 
   constructor(public dialog: MatDialog,) { }
 
@@ -25,6 +26,7 @@ export class GameComponent {
     console.log(this.game)
   }
 
+  
   takeCard(){
     
       if(!this.pickCardAnimation)
@@ -56,6 +58,12 @@ export class GameComponent {
         this.game.players.push(name);
 
       }
+      if(this.game.players.length >= 2){
+        this.showCardStack = true;
+          console.log('current player' + this.game.players )
+        }
     });
+
+    
   }
 }

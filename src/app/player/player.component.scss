@@ -16,8 +16,18 @@
         object-fit: cover;
         border-radius: 100%;
     }
+
+    .delete-icon{
+        position: absolute;
+        right: 0;
+        object-fit: contain;
+        height: 2rem;
+        cursor: pointer;
+    }
 }
 
 .player-active{
     background-color: rgba(112, 80, 34, 0.622);
 }
+
+

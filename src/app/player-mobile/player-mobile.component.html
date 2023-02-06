@@ -1,0 +1,5 @@
+<div class="player hide-desktop" [class.player-active]="playerActive">
+    <span> {{ name }}</span>
+    <img src="assets/player/player.jpg" alt="">
+    <img (click)="deletePlayer()" class="delete-icon" src="assets/icons/delete.png" alt="">
+</div>
